@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { IoIosMenu } from "react-icons/io";
 
 const Container = styled.div`
   width: 100%;
@@ -14,22 +13,28 @@ const Container = styled.div`
     display: block;
     margin-top: -5px;
   }
+
+  #img {
+    width: 60px;
+    height: 60px;
+    background-color: gray;
+    border-radius: 50%;
+  }
 `;
 
 interface Props {
   onOpen: () => void;
+  name: string;
 }
 
-const Header = ({ onOpen }: Props) => {
-  const name = "John";
-
+const Header = ({ onOpen, name }: Props) => {
   return (
     <Container>
       <div>
         Good morning,
         <span>{name}!</span>
       </div>
-      <IoIosMenu size={43} onClick={onOpen} />
+      <div id="img" onClick={onOpen}></div>
     </Container>
   );
 };
