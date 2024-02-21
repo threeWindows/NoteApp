@@ -32,7 +32,7 @@ const Header = ({ onOpen, name }: Props) => {
     <Container>
       <div>
         Good morning,
-        <span>{name}!</span>
+        <span>{name ? name : "Unknown"}!</span>
       </div>
       <div id="img" onClick={onOpen}></div>
     </Container>

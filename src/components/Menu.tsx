@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaPen, FaCheck, FaArrowLeft } from "react-icons/fa";
-import { ChangeEvent, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "../css/animation.css";
 
 const Container = styled.div`
@@ -75,7 +75,7 @@ const Container = styled.div`
 interface Props {
   isMenuOpen: boolean;
   onClose: () => void;
-  fetchName: (event: ChangeEvent) => void;
+  fetchName: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Menu = ({ fetchName, isMenuOpen, onClose }: Props) => {
@@ -84,7 +84,7 @@ const Menu = ({ fetchName, isMenuOpen, onClose }: Props) => {
   const hideElement = inputVisible ? { display: "none" } : { display: "block" };
   const showElement = inputVisible ? { display: "block" } : { display: "none" };
 
-  const name = useRef(null);
+  const name = useRef<HTMLInputElement>(null);
 
   const listElements = ["Notes", "Categories", "Settings"];
 
@@ -94,7 +94,7 @@ const Menu = ({ fetchName, isMenuOpen, onClose }: Props) => {
         <header>
           <div id="img"></div>
           <p style={hideElement}>
-            {name.current?.value.length > 0
+            {(name.current?.value?.length ?? 0) > 0
               ? name.current?.value
               : "Type your name ..."}
           </p>
@@ -126,7 +126,6 @@ const Menu = ({ fetchName, isMenuOpen, onClose }: Props) => {
         </ul>
         <footer>
           <FaArrowLeft onClick={onClose} />
-          {/* onClick={() => setContainerVisibility(false)} */}
         </footer>
       </Container>
     </div>
