@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <div className="mainContainer">
+      <div>
         <Header name={name} onOpen={() => setContainerVisibility(true)} />
         <Menu
           onClose={() => setContainerVisibility(false)}

@@ -7,7 +7,7 @@ const Container = styled.div`
   width: 80vw;
   height: 100vh;
   background-color: white;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   border-radius: 30px 0px 0px 30px;
