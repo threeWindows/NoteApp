@@ -12,7 +12,7 @@ const Container = styled.div`
   right: 0;
   border-radius: 30px 0px 0px 30px;
   color: black;
-  /* transform: translateX(100%); */
+  z-index: 10;
   transition: transform 0.6s ease-out;
 
   header {
