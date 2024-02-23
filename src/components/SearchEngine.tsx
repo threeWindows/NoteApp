@@ -5,7 +5,6 @@ import { useRef } from "react";
 const Container = styled.div`
   width: 100%;
   height: auto;
-  /* background-color: pink; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,13 +26,22 @@ const Container = styled.div`
   }
 `;
 
-const SearchEngine = () => {
+interface Props {
+  findBy: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const SearchEngine = ({ findBy }: Props) => {
   const findNote = useRef(null);
 
   return (
     <Container>
       <FaSearch className="icon" />
-      <input ref={findNote} type="text" placeholder="Find note ..." />
+      <input
+        ref={findNote}
+        onChange={(event) => findBy(event)}
+        type="text"
+        placeholder="Find note ..."
+      />
     </Container>
   );
 };

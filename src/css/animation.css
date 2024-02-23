@@ -5,3 +5,11 @@
 .close {
   transform: translateX(100%);
 }
+
+.newNoteOpen {
+  transform: translateY(0%);
+}
+
+.newNoteClose {
+  transform: translateY(100%);
+}

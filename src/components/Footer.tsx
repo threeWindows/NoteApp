@@ -9,6 +9,8 @@ const Container = styled.div`
   left: 0;
   display: flex;
   justify-content: center;
+  background-color: #1f1f1f;
+  padding-top: 15px;
 
   button {
     width: 60px;
@@ -24,11 +26,15 @@ const Container = styled.div`
   }
 `;
 
-const Footer = () => {
+interface Props {
+  onOpen: () => void;
+}
+
+const Footer = ({ onOpen }: Props) => {
   return (
     <Container>
       <button>
-        <IoIosAdd size={45} />
+        <IoIosAdd onClick={onOpen} size={45} />
       </button>
     </Container>
   );

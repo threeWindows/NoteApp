@@ -26,9 +26,10 @@ const Container = styled.div`
 
 interface Props {
   text: string[];
+  findByCategory: (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 }
 
-const Categories = ({ text }: Props) => {
+const Categories = ({ text, findByCategory }: Props) => {
   const [itemIndex, setIndex] = useState(-1);
 
   return (
@@ -38,7 +39,8 @@ const Categories = ({ text }: Props) => {
           {text.map((item, index) => (
             <li
               key={item}
-              onClick={() => {
+              onClick={(event) => {
+                findByCategory(event);
                 const clickedItem = index;
                 if (index == clickedItem) {
                   setIndex(index);
